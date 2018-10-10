@@ -3,25 +3,27 @@ package com.cg.payroll.services;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import org.apache.log4j.Logger;
+
 import com.cg.payroll.beans.Associate;
 import com.cg.payroll.beans.BankDetails;
 import com.cg.payroll.beans.Salary;
 import com.cg.payroll.daoservices.AssociateDAO;
-//import com.cg.payroll.daoservices.AssociateDAOImpl;
+import com.cg.payroll.daoservices.AssociateDAOImpl;
 import com.cg.payroll.exceptions.AssociateDetailNotFoundException;
 import com.cg.payroll.exceptions.PayrollServicesDownException;
 
 public class PayrollServicesImpl implements PayrollServices {
-	//AssociateDAO associateDAO = new AssociateDAOImpl();
-	AssociateDAO AssociateDAO;
-	
-	public PayrollServicesImpl(
-			com.cg.payroll.daoservices.AssociateDAO associateDAO) {
+	AssociateDAO associateDAO = new AssociateDAOImpl();
+	//AssociateDAO associateDAO;
+	public static final  Logger logger = logger.getLogger(PayrollServicesImpl.class);
+	/*public PayrollServicesImpl(AssociateDAO associateDAO) {
 		super();
-		AssociateDAO = associateDAO;
-	}
+		this.associateDAO = associateDAO;
+	}*/
 
-	@Override
+	//public PayrollServicesImpl() {	}
+
 	public int acceptAssociateDetails(String firstName, String lastName,
 			String emailid, String department, String designation,
 			String pancard, int yearlyInvestmentUnder80C, int basicSalary,

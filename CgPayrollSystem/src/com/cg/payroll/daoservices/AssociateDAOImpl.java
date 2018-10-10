@@ -1,4 +1,4 @@
-/*package com.cg.payroll.daoservices;
+package com.cg.payroll.daoservices;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -136,4 +136,3 @@ public class AssociateDAOImpl implements AssociateDAO {
 		return false;
 	}	
 }
-*/
